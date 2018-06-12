@@ -1,0 +1,19 @@
+{
+  "name": "threefish",
+  "version": "1.0.0",
+  "description": "threefish.js ============",
+  "main": "threefish.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bright/threefish.js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bright/threefish.js/issues"
+  },
+  "homepage": "https://github.com/bright/threefish.js#readme"
+}
