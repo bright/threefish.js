@@ -1,3 +1,9 @@
+var root = window || {};
+if(typeof exports === 'object' && typeof module === 'object')
+    root = module.exports;
+else if(typeof exports === 'object')
+    root = exports;
+
 function add64(a, b) {
     var l = a.l + b.l;
     var h = a.h + b.h;
@@ -62,7 +68,7 @@ function encrypt256(key, tweak, blockin, blockout) {
              xor64(key[1],   xor64(key[2], key[3]))));
     var k = [key[0], key[1], key[2], key[3], k4];
     var t = [tweak[0], tweak[1], xor64(tweak[0], tweak[1])];
-    var a = add64(blockin[0], key[0]), 
+    var a = add64(blockin[0], key[0]),
         b = add64(add64(blockin[1], key[1]), tweak[0]),
         c = add64(add64(blockin[2], key[2]), tweak[1]),
         d = add64(blockin[3], key[3]);
@@ -300,7 +306,7 @@ function toBytes(words) {
 // Calculate the 256 bit Skein digest of a given message.
 // The message is assumed to be a string where each character represents
 // a single byte.
-function skein256(message) {
+root.skein256 = function skein256(message) {
     return toBytes(hash256(_zero256, message));
 }
 
