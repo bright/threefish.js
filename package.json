@@ -4,7 +4,7 @@
   "description": "threefish.js ============",
   "main": "threefish.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc --strict --module commonjs --target es2016 --esModuleInterop true webpack.config.ts && node $NODE_DEBUG_OPTION $(which webpack)"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,16 @@
   "bugs": {
     "url": "https://github.com/bright/threefish.js/issues"
   },
-  "homepage": "https://github.com/bright/threefish.js#readme"
+  "homepage": "https://github.com/bright/threefish.js#readme",
+  "devDependencies": {
+    "@types/webpack": "^4.4.0",
+    "ts-loader": "^4.4.1",
+    "typescript": "^2.9.2",
+    "webpack": "^4.12.0",
+    "webpack-command": "^0.2.1"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.109",
+    "lodash": "^4.17.10"
+  }
 }
