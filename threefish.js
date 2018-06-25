@@ -364,7 +364,7 @@ function uncbc(key, message, iv) {
 
 // A Threefish 256 encryptor. The key is assumed to be a string consisting of
 // exactly 32 characters, none of which has a charcode >255.
-function Threefish256(key) {
+root.Threefish256 = function Threefish256(key) {
     var tweak = [{l:0,h:0}, {l:0,h:0}];
 
     // Encrypt a message using CBC with the given IV. Messages whose length is
@@ -404,3 +404,4 @@ function Threefish256(key) {
         return this.decryptCBC(cryptotext, iv);
     };
 }
+
