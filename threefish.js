@@ -1,4 +1,4 @@
-var root = window || {};
+var root = typeof window !== 'undefined' ? window : {};
 if(typeof exports === 'object' && typeof module === 'object')
     root = module.exports;
 else if(typeof exports === 'object')
